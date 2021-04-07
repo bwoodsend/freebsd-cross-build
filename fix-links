@@ -3,11 +3,11 @@
 # so they get eaten
 
 ll() {
-    ln -sf /freebsd/x86_64-pc-freebsd9/lib/$1 /freebsd/x86_64-pc-freebsd9/lib/$2
+    ln -sf /freebsd/x86_64-pc-freebsd11/lib/$1 /freebsd/x86_64-pc-freebsd11/lib/$2
 }
 
 li() {
-    ln -sf /freebsd/x86_64-pc-freebsd9/include/$1  /freebsd/x86_64-pc-freebsd9/include/$2
+    ln -sf /freebsd/x86_64-pc-freebsd11/include/$1  /freebsd/x86_64-pc-freebsd11/include/$2
 }
 
 ll libalias.so.7 libalias.so
@@ -191,6 +191,6 @@ li sys/syslog.h ./syslog.h
 li sys/termios.h ./termios.h
 li sys/ucontext.h ./ucontext.h
 
-ln -sf /freebsd/lib/gcc/x86_64-pc-freebsd9/4.8.5/libgcc.a /freebsd/x86_64-pc-freebsd9/lib/libgcc.a
-ln -sf /freebsd/lib/gcc/x86_64-pc-freebsd9/4.8.5/libgcc_p.a /freebsd/x86_64-pc-freebsd9/lib/libgcc_p.a
+ln -sf /freebsd/lib/gcc/x86_64-pc-freebsd11/4.8.5/libgcc.a /freebsd/x86_64-pc-freebsd11/lib/libgcc.a
+ln -sf /freebsd/lib/gcc/x86_64-pc-freebsd11/4.8.5/libgcc_p.a /freebsd/x86_64-pc-freebsd11/lib/libgcc_p.a
 

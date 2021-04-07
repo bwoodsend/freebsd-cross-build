@@ -14,7 +14,7 @@ To run:
     docker run --rm -it freebsd-cross-build
 
 There is /freebsd/bin on the path. It has all of the build
-tools (e.g. x86_64-pc-freebsd9-gcc)
+tools (e.g. x86_64-pc-freebsd11-gcc)
 
 It is likely you would add a -v switch to the run (to put your
 code on a mount).
