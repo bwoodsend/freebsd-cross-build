@@ -18,9 +18,9 @@ then
     exit 1
 fi
 mkdir -p freebsd
-(cd freebsd; 7z x ../FreeBSD-9.3-RELEASE-amd64-dvd1.iso usr/include)
-(cd freebsd; 7z x ../FreeBSD-9.3-RELEASE-amd64-dvd1.iso usr/lib)
-(cd freebsd; 7z x ../FreeBSD-9.3-RELEASE-amd64-dvd1.iso lib)
+(cd freebsd; 7z -aoa x ../FreeBSD-9.3-RELEASE-amd64-dvd1.iso usr/include)
+(cd freebsd; 7z -aoa x ../FreeBSD-9.3-RELEASE-amd64-dvd1.iso usr/lib)
+(cd freebsd; 7z -aoa x ../FreeBSD-9.3-RELEASE-amd64-dvd1.iso lib)
 
 docker build -t freebsd-cross-build .
 exit 0
