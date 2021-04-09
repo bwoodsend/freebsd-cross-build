@@ -55,7 +55,7 @@ RUN cd / && \
 
 env LD_LIBRARY_PATH /freebsd/lib
 env PATH /freebsd/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-env CC x86_64-pc-freebsd11-gcc
+env CC x86_64-pc-freebsd11-gcc --std=c99 -D PATH_MAX=1024
 env CPP x86_64-pc-freebsd11-cpp
 env AS x86_64-pc-freebsd11-as
 env LD x86_64-pc-freebsd11-ld
