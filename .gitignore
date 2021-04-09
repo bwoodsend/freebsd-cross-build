@@ -2,5 +2,6 @@
 *.xz
 *.iso
 *.bz2
+*.tar
 freebsd
 CHECKSUM*
