@@ -62,3 +62,10 @@ env LD x86_64-pc-freebsd11-ld
 env AR x86_64-pc-freebsd11-ar
 env RANLIB x86_64-pc-freebsd11-ranlib
 env HOST x86_64-pc-freebsd11
+
+RUN apt install -y software-properties-common
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt update
+RUN apt install -y python3.7 python3-pip
+COPY python-shim /usr/bin/python
+RUN python -m pip install -U pip
