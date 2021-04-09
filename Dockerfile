@@ -24,24 +24,24 @@ ADD mpfr-3.1.3.tar.xz /src/
 RUN cd /src/binutils-2.25.1 && \
     ./configure --enable-libssp --enable-ld --target=x86_64-pc-freebsd11 --prefix=/freebsd && \
     make -j4 && \
-    make install && \
-    cd /src/gmp-6.0.0 && \
+    make install
+RUN cd /src/gmp-6.0.0 && \
     ./configure --prefix=/freebsd --enable-shared --enable-static \
       --enable-mpbsd --enable-fft --enable-cxx --host=x86_64-pc-freebsd11 && \
     make -j4 && \
-    make install && \
-    cd /src/mpfr-3.1.3 && \
+    make install
+RUN cd /src/mpfr-3.1.3 && \
     ./configure --prefix=/freebsd --with-gnu-ld  --enable-static \
       --enable-shared --with-gmp=/freebsd --host=x86_64-pc-freebsd11 && \
     make -j4 && \
-    make install && \
-    cd /src/mpc-1.0.3/ && \
+    make install
+RUN cd /src/mpc-1.0.3/ && \
     ./configure --prefix=/freebsd --with-gnu-ld \
       --enable-static --enable-shared --with-gmp=/freebsd \
       --with-mpfr=/freebsd --host=x86_64-pc-freebsd11  &&\
     make -j4 && \
-    make install && \
-    mkdir -p /src/gcc-4.8.5/build && \
+    make install
+RUN mkdir -p /src/gcc-4.8.5/build && \
     cd /src/gcc-4.8.5/build && \
     ../configure --without-headers --with-gnu-as --with-gnu-ld --disable-nls \
         --enable-languages=c,c++ --enable-libssp --enable-ld \
@@ -49,8 +49,8 @@ RUN cd /src/binutils-2.25.1 && \
         --prefix=/freebsd --with-gmp=/freebsd \
         --with-mpc=/freebsd --with-mpfr=/freebsd --disable-libgomp && \
     LD_LIBRARY_PATH=/freebsd/lib make -j10 && \
-    make install && \
-    cd / && \
+    make install
+RUN cd / && \
     rm -rf /src
 
 env LD_LIBRARY_PATH /freebsd/lib
